@@ -35,6 +35,10 @@ export default function PageThree() {
         <video src={vid} className='w-screen h-screen object-cover' alt='hack' autoPlay muted/>
     </div> : 
       <div className="h-screen flex justify-center items-center flex-col bg-[#161313]">
+         <div className="absolute top-0 right-0 h-24 rounded-full aspect-square green-500 sm:bg-green-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+            <div className="absolute top-0 left-0 h-24 rounded-full aspect-square bg-pink-500 sm:bg-pink-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+            <div className="absolute bottom-0 left-0 h-24 rounded-full aspect-square bg-blue-500 sm:bg-blue-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
+            <div className="absolute bottom-0 right-0 h-24 rounded-full aspect-square bg-yellow-500 sm:bg-yellow-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
         {/* Logo Section */}
         <main className="flex flex-col items-center">
           <div className="my-7 md:my-5">
@@ -48,7 +52,7 @@ export default function PageThree() {
           </div>
           
           {/* Header */}
-          <h1 className="text-white text-xl md:text-5xl md:my-8 font-extrabold font-silkscreen my-8 text-center w-[90%]">
+          <h1 className="text-white text-lg md:text-5xl md:my-8 font-extrabold font-silkscreen my-8 text-center w-[90%]">
             YOU'VE BEEN <span className="text-[#838de9]">PAWNED!</span>
           </h1>
         </main>
