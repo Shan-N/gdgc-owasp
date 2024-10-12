@@ -52,7 +52,7 @@ export default function PageThree() {
           </div>
           
           {/* Header */}
-          <h1 className="text-white text-lg md:text-5xl md:my-8 font-extrabold font-silkscreen my-8 text-center w-[90%]">
+          <h1 className="text-white text-4xl md: md:my-8 font-extrabold font-silkscreen my-8 text-center w-[90%]">
             YOU'VE BEEN <span className="text-[#838de9]">PAWNED!</span>
           </h1>
         </main>
