@@ -52,63 +52,89 @@ export default function PageTwo() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-black h-full w-full">
-      <img className="w-[15%]" src={logo} alt="GDGC Logo" />
-      <div className="text-white font-silkscreen font-bold text-[35px] text-center w-[60%] my-5">
-        COMPLETE THE FORM AND GRAB YOUR{" "}
-        <span className="text-[#848EE9] mx-[7px] my-[0px]">CERTIFICATE</span>!
-      </div>
-      <div className="flex flex-col justify-center items-center p-10 border-[3px] border-[#848EE9] shadow-[10px_10px_0px_#848EE9] rounded-[20px] w-[90%] max-w-[600px] box-border">
+    <div className="flex flex-col  justify-center items-center  bg-[#161313] h-screen w-screen px-4">
+
+
+        <div className="flex flex-col justify-center items-center my-7 md:my-5">
+                    <img
+                        aria-hidden="true"
+                        src="https://www.dscvit.com/newlogo.svg"
+                        width={150}
+                        height={150}
+                        alt="logo-gdgc"
+                    />
+          </div>
+
+      <div className="flex flex-row justify-center md: text-center px-4 w-[90%]">
+              <h1 className="text-white text-lg md:text-5xl md:my-8 font-extrabold font-silkscreen my-8 ">
+                 COMPLETE THE FORM AND GRAB YOUR{" "}
+              <span className="text-[#838de9]">CERTIFICATE{" "}</span>
+           </h1>
+        </div>
+
+
+
+      <div className="w-[90%] bg-[#161313] rounded-xl border shadow-custom border-[#6e6e6e] flex flex-col items-center py-12 px-4 md:w-[70%]">
         {/* <Input fun={handleUserInput} label="Name:" />
         <Input fun={handleUserInput} label="Phone Number:" />
         <Input fun={handleUserInput} label="E-mail:" /> */}
 
         {/* Name */}
-        <div className="flex flex-col  w-full mb-6">
-          <div className="font-chakra-petch font-medium text-[#F0ECCE] text-[32px] mb-2">
-            Name:
-          </div>
-          <div className="flex justify-center items-center w-full max-w-[600px] h-[60px] bg-[#F0ECCE] shadow-lg rounded-[18px] border-[3px] border-[#CCCCCC] box-border">
-            <input
-              className="bg-transparent border-none w-full h-full text-[36px] outline-none text-black px-2"
-              type="text"
-              onChange={(e) => handleUserInput("name", e.target.value)}
-            />
-          </div>
+          <div className="flex flex-col w-full my-2  ">
+
+            <div className="font-chakra-petch font-medium text-white text-lg mb-2">
+              Name:
+            </div>
+
+            <div className="flex  justify-center items-center w-full h-[60px] shadow-lg  border-[3px]  box-border">
+              <input
+                className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
+                type="text"
+                onChange={(e) => handleUserInput("name", e.target.value)}
+              />
+            </div>
         </div>
+
         {/* Phone number */}
-        <div className="flex flex-col  w-full mb-6">
-          <div className="font-chakra-petch font-medium text-[#F0ECCE] text-[32px] mb-2">
+        <div className="flex flex-col  w-full my-2 ">
+          <div className="font-chakra-petch font-medium text-white text-lg mb-2">
             Phone Number:
           </div>
-          <div className="flex justify-center items-center w-full max-w-[600px] h-[60px] bg-[#F0ECCE] shadow-lg rounded-[18px] border-[3px] border-[#CCCCCC] box-border">
+          <div className="flex  justify-center items-center w-full h-[60px] shadow-lg  border-[3px]  box-border">
             <input
-              className="bg-transparent border-none w-full h-full text-[36px] outline-none text-black px-2"
+               className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
               type="tel"
               onChange={(e) => handleUserInput("phone", e.target.value)}
             />
           </div>
         </div>
+
+
         {/* Email */}
-        <div className="flex flex-col w-full mb-6">
-          <div className="font-chakra-petch font-medium text-[#F0ECCE] text-[32px] mb-2">
+        <div className="flex flex-col w-full my-2 ">
+          <div className="font-chakra-petch font-medium text-white text-lg  mb-2">
             E-mail:
           </div>
-          <div className="flex  items-center w-full max-w-[600px] h-[60px] bg-[#F0ECCE] shadow-lg rounded-[18px] border-[3px] border-[#CCCCCC] box-border">
+          <div className="flex  justify-center items-center w-full h-[60px] shadow-lg  border-[3px]  box-border" >
             <input
-              className="bg-transparent border-none w-full h-full text-[36px] outline-none text-black px-2"
+             className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
               type="text"
               onChange={(e) => handleUserInput("email", e.target.value)}
             />
           </div>
         </div>
+
         <div
-          className="bg-[#848EE9] rounded-[9px] text-white text-[28px] font-chakra-petch font-medium text-center py-3 px-5 cursor-pointer w-fit"
+          className="font-semibold rounded-xl py-2 px-4 font-chakra text-white bg-[#6977FD] text-sm my-4"
           onClick={handleSignUp}
         >
-          Generate Certificate
+          GENERATE CERTIFICATE
         </div>
       </div>
+
+
+
+      
     </div>
   );
 }
