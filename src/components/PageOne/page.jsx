@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/Button";
 import './page.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -32,7 +33,11 @@ export default function PageOne() {
                         By entering your details, you’ll receive a downloadable certificate featuring your name and session information, recognizing your dedication to cybersecurity education.
                     </div>
                     <div className="w-full flex justify-center">
-                        <Button className="font-semibold rounded-xl font-chakra text-white bg-[#6977FD] gen-btn">GENERATE CERTIFICATE</Button>
+                        <Button className="font-semibold rounded-xl font-chakra text-white bg-[#6977FD] gen-btn">
+                            <Link to='/login'>
+                            GENERATE CERTIFICATE
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </section>
