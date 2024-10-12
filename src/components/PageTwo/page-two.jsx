@@ -54,6 +54,10 @@ export default function PageTwo() {
   return (
     <div className="flex flex-col  justify-center items-center  bg-[#161313] h-screen w-screen px-4">
 
+<div className="absolute top-0 right-0 h-24 rounded-full aspect-square bg-green-500 sm:bg-green-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+            <div className="absolute top-0 left-0 h-24 rounded-full aspect-square bg-pink-500 sm:bg-pink-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+            <div className="absolute bottom-0 left-0 h-24 rounded-full aspect-square bg-blue-500 sm:bg-blue-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
+            <div className="absolute bottom-0 right-0 h-24 rounded-full aspect-square bg-yellow-500 sm:bg-yellow-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
 
         <div className="flex flex-col justify-center items-center my-7 md:my-5">
                     <img

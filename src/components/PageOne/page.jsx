@@ -9,6 +9,10 @@ export default function PageOne() {
     return (
         <>
         <div className="h-screen flex justify-center items-center flex-col">
+            <div className="absolute top-0 right-0 h-24 rounded-full aspect-square green-500 sm:bg-green-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+            <div className="absolute top-0 left-0 h-24 rounded-full aspect-square bg-pink-500 sm:bg-pink-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+            <div className="absolute bottom-0 left-0 h-24 rounded-full aspect-square bg-blue-500 sm:bg-blue-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
+            <div className="absolute bottom-0 right-0 h-24 rounded-full aspect-square bg-yellow-500 sm:bg-yellow-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
             <main className="bg-[#161313] flex flex-col justify-start items-center ">
                 <div className="flex flex-col justify-center items-center my-7 md:my-5">
                     <img
@@ -33,7 +37,7 @@ export default function PageOne() {
                         By entering your details, you’ll receive a downloadable certificate featuring your name and session information, recognizing your dedication to cybersecurity education.
                     </div>
                     <div className="w-full flex justify-center">
-                        <Button className="font-semibold rounded-xl font-chakra text-white bg-[#6977FD] gen-btn">
+                        <Button className="font-semibold rounded-xl font-chakra text-white bg-[#6977FD] gen-btn cursor-pointer">
                             <Link to='/login'>
                             GENERATE CERTIFICATE
                             </Link>

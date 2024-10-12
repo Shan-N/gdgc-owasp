@@ -10,7 +10,7 @@ const config = {
   theme: {
     extend: {
       boxShadow: {
-        'custom': '7px 8px 0px rgba(255, 255, 255, 1)',
+        'custom': '7px 8px 0px rgba(106,119,252, 1)',
       },
       fontFamily: {
         silkscreen: ["Silkscreen", "sans-serif"],
