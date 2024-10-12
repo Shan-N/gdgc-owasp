@@ -1,0 +1,102 @@
+.bg{
+    
+    align-items: center;
+    text-align: center;
+}
+.logo{
+    margin-top: 20px;
+    height: 150px;
+}
+
+.main_fnt{
+    color: aliceblue;
+}
+.silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: aliceblue;
+  }
+.chakrapetch{
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 4px;
+    font-weight: 700;
+    color: aliceblue;
+}
+
+.chakra-petch-semibold {
+    margin: 50px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: aliceblue;
+  }
+
+  .card{
+    /* display: none; */
+    border: 2px aliceblue groove;
+    /* transform: scaleY(0); */
+    margin: auto;
+    width: 30%;
+    text-align: left;
+    padding: 25px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-size: x-large;
+    font-style: normal;
+    color: aliceblue;
+    border-radius: 25px;
+    box-shadow: rgba(81, 3, 224, 0.4) 5px 5px, rgba(58, 20, 231, 0.3) 10px 10px, rgba(74, 41, 193, 0.2) 15px 15px, rgba(207, 195, 220, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    transform-origin: top; /* Scale from the top */
+    transition: transform 0.5s ease-in-out; 
+  }
+  .card.show {
+    display: block; /* Show the box */
+    transform: scaleY(1); /* Scale to original size */
+}
+  .type-text {
+    
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .15em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    /* 50% { border-color: orange; } */
+  }
+  
+  @media screen and (max-width:800px) {
+    .logo{
+        height: 80px;
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+    .card{
+        width: 70%;
+        font-size:large;
+    }
+    .silkscreen-bold{
+        font-size: medium;
+    } 
+    .chakrapetch{
+        font-size: 20px;
+    }
+    .chakra-petch-semibold{
+        font-size: 20px;
+        margin-top: 20px;
+        margin:"30px 20px"
+        }
+  }

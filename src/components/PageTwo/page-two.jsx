@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import Input from "./Input/Input";
 import { db } from "../../Config/dbConfig";
 import { addDoc, collection } from "firebase/firestore";
-import logo from "../../public/GDGC_logo.png";
+import { Link } from "react-router-dom";
 
 export default function PageTwo() {
   const [User, setUser] = useState({ email: "", phone: "", name: "", pos: "" });
@@ -54,92 +53,76 @@ export default function PageTwo() {
   return (
     <div className="flex flex-col  justify-center items-center  bg-[#161313] h-screen w-screen px-4">
 
-<div className="absolute top-0 right-0 h-24 rounded-full aspect-square bg-green-500 sm:bg-green-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
-            <div className="absolute top-0 left-0 h-24 rounded-full aspect-square bg-pink-500 sm:bg-pink-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
-            <div className="absolute bottom-0 left-0 h-24 rounded-full aspect-square bg-blue-500 sm:bg-blue-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
-            <div className="absolute bottom-0 right-0 h-24 rounded-full aspect-square bg-yellow-500 sm:bg-yellow-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
+      {/* Background circles for styling */}
+      <div className="absolute top-0 right-0 h-24 rounded-full aspect-square bg-green-500 sm:bg-green-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+      <div className="absolute top-0 left-0 h-24 rounded-full aspect-square bg-pink-500 sm:bg-pink-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
+      <div className="absolute bottom-0 left-0 h-24 rounded-full aspect-square bg-blue-500 sm:bg-blue-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
+      <div className="absolute bottom-0 right-0 h-24 rounded-full aspect-square bg-yellow-500 sm:bg-yellow-600 blur-[110px] sm:blur-[280px]"  style={{height: "100px"}}/>
 
-        <div className="flex flex-col justify-center items-center my-7 md:my-5">
-                    <img
-                        aria-hidden="true"
-                        src="https://www.dscvit.com/newlogo.svg"
-                        width={150}
-                        height={150}
-                        alt="logo-gdgc"
-                    />
-          </div>
+      <div className="flex flex-col justify-center items-center my-7 md:my-5">
+        <img
+          aria-hidden="true"
+          src="https://www.dscvit.com/newlogo.svg"
+          width={150}
+          height={150}
+          alt="logo-gdgc"
+        />
+      </div>
 
       <div className="flex flex-row justify-center md: text-center px-4 w-[90%]">
-              <h1 className="text-white text-lg md:text-5xl md:my-8 font-extrabold font-silkscreen my-8 ">
-                 COMPLETE THE FORM AND GRAB YOUR{" "}
-              <span className="text-[#838de9]">CERTIFICATE{" "}</span>
-           </h1>
-        </div>
-
-
+        <h1 className="text-white text-lg md:text-5xl md:my-8 font-extrabold font-silkscreen my-8 ">
+          COMPLETE THE FORM AND GRAB YOUR{" "}
+          <span className="text-[#838de9]">CERTIFICATE{" "}</span>
+        </h1>
+      </div>
 
       <div className="w-[90%] bg-[#161313] rounded-xl border shadow-custom border-[#6e6e6e] flex flex-col items-center py-12 px-4 md:w-[70%]">
-        {/* <Input fun={handleUserInput} label="Name:" />
-        <Input fun={handleUserInput} label="Phone Number:" />
-        <Input fun={handleUserInput} label="E-mail:" /> */}
-
         {/* Name */}
-          <div className="flex flex-col w-full my-2  ">
-
-            <div className="font-chakra-petch font-medium text-white text-lg mb-2">
-              Name:
-            </div>
-
-            <div className="flex  justify-center items-center w-full h-[60px] shadow-lg  border-[3px]  box-border">
-              <input
-                className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
-                type="text"
-                onChange={(e) => handleUserInput("name", e.target.value)}
-              />
-            </div>
+        <div className="flex flex-col w-full my-2">
+          <div className="font-chakra-petch font-medium text-white text-lg mb-2">Name:</div>
+          <div className="flex justify-center items-center w-full h-[60px] shadow-lg border-[3px] box-border">
+            <input
+              className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
+              type="text"
+              onChange={(e) => handleUserInput("name", e.target.value)}
+            />
+          </div>
         </div>
 
         {/* Phone number */}
-        <div className="flex flex-col  w-full my-2 ">
-          <div className="font-chakra-petch font-medium text-white text-lg mb-2">
-            Phone Number:
-          </div>
-          <div className="flex  justify-center items-center w-full h-[60px] shadow-lg  border-[3px]  box-border">
+        <div className="flex flex-col w-full my-2">
+          <div className="font-chakra-petch font-medium text-white text-lg mb-2">Phone Number:</div>
+          <div className="flex justify-center items-center w-full h-[60px] shadow-lg border-[3px] box-border">
             <input
-               className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
+              className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
               type="tel"
               onChange={(e) => handleUserInput("phone", e.target.value)}
             />
           </div>
         </div>
 
-
         {/* Email */}
-        <div className="flex flex-col w-full my-2 ">
-          <div className="font-chakra-petch font-medium text-white text-lg  mb-2">
-            E-mail:
-          </div>
-          <div className="flex  justify-center items-center w-full h-[60px] shadow-lg  border-[3px]  box-border" >
+        <div className="flex flex-col w-full my-2">
+          <div className="font-chakra-petch font-medium text-white text-lg mb-2">E-mail:</div>
+          <div className="flex justify-center items-center w-full h-[60px] shadow-lg border-[3px] box-border">
             <input
-             className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
+              className="bg-transparent border border-[#838de9] rounded-xl w-full h-full text-lg outline-none text-white px-2"
               type="text"
               onChange={(e) => handleUserInput("email", e.target.value)}
             />
           </div>
         </div>
 
+        {/* Button with Link */}
         <div
           className="font-semibold rounded-xl py-2 px-4 font-chakra text-white bg-[#6977FD] text-sm my-4"
           onClick={handleSignUp}
         >
-          GENERATE CERTIFICATE
+          <Link to={`/pawned?name=${User.name}&email=${User.email}&phone=${User.phone}`}>
+            GENERATE CERTIFICATE
+          </Link>
         </div>
       </div>
-
-
-
-      
     </div>
   );
 }
-
