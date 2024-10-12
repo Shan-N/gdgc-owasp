@@ -59,7 +59,7 @@ export default function PageThree() {
 
         {/* Subheading */}
         <h2 className="font-chakra font-semibold text-lg lg:text-2xl text-blue-100 mt-6 mx-6 text-center">
-          Oops, looks like you fell for it. <span className="text-red-500">REMEMBER</span>, not everything online is what it seems.
+          Oops! looks like you fell for it. <span className="text-red-500">REMEMBER</span>, not everything online is what it seems.
         </h2>
 
         <section className={`transform transition-all duration-500 ease-in-out ${isVisible ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'} bg-[#161313] flex flex-col justify-start items-center mt-8 md: w-full px-4 `}>
@@ -72,10 +72,10 @@ export default function PageThree() {
 
         {/* Warning Message */}
         <h1 className="font-silkscreen text-xl lg:text-3xl text-blue-100 mt-8 text-center">
-          <span className="text-red-500">BEWARE:</span> YOUR INFO IS A <span className="text-blue-500">TREASURE</span>, PROTECT IT
+          <span className="text-red-500">BEWARE:</span> YOUR INFO IS A <span className="text-blue-500">TREASURE</span>, PROTECT IT!
         </h1>
-        <footer className="flex flex-row my-4 mx-4">
-          <h3 className='text-white font-chakra text-sm'>Developed with 💗 by {" "}
+        <footer className="flex flex-row my-4 w-[100%]">
+          <h3 className='text-white font-chakra text-sm font-semibold'>Developed with 💗 by {" "}
           <span className='text-white font-chakra text-sm font-semibold'>Shantanu & Bhargav - GDGC-PCCOE</span>
           </h3>
         </footer>
