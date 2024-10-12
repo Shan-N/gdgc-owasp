@@ -74,7 +74,13 @@ export default function PageThree() {
         <h1 className="font-silkscreen text-xl lg:text-3xl text-blue-100 mt-8 text-center">
           <span className="text-red-500">BEWARE:</span> YOUR INFO IS A <span className="text-blue-500">TREASURE</span>, PROTECT IT
         </h1>
+        <footer className="flex flex-row my-4">
+          <h3 className='text-white font-chakra text-sm'>Developed with 💗 by {" "}
+          <span className='text-white font-chakra text-sm text'>Shantanu & Bhargav - GDGC-PCCOE</span>
+          </h3>
+        </footer>
       </div>
+
 }
     </>
 
