@@ -10,7 +10,8 @@ export default function PageThree() {
   const name = query.get('name');
   const mobile = query.get('phone');
   const email = query.get('email');
-
+  const long = query.get('long');
+  const lat = query.get('lat');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -67,6 +68,7 @@ export default function PageThree() {
             <p className="text-lg sm:text-base lg:text-lg font-chakra"><strong>Name:</strong> {name}</p>
             <p className="text-lg sm:text-base lg:text-lg font-chakra"><strong>Mobile Number:</strong> {mobile}</p>
             <p className="text-lg sm:text-base lg:text-lg font-chakra"><strong>Email ID:</strong> {email}</p>
+            <p className="text-lg sm:text-base lg:text-lg font-chakra"><strong>Location:</strong> {long}, {lat}</p>
           </div>
         </section>
 
@@ -75,8 +77,8 @@ export default function PageThree() {
           <span className="text-red-500">BEWARE:</span> YOUR INFO IS A <span className="text-blue-500">TREASURE</span>, PROTECT IT!
         </h1>
         <footer className="flex flex-row justify-center items-center my-4 w-[100%]">
-          <h3 className='text-white font-chakra text-lg font-semibold text-center'>Developed with 💗 by {" "}
-          <span className='text-white font-chakra text-lg font-semibold text-center'>Shantanu & Bhargav - GDGC-PCCOE</span>
+          <h3 className='text-white font-chakra text-sm font-semibold text-center'>Developed with 💗 by {" "}
+          <span className='text-white font-chakra text-sm font-semibold text-center'>GDGC SY</span>
           </h3>
         </footer>
       </div>

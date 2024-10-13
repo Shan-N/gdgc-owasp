@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../Config/dbConfig";
 import { addDoc, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
 
 export default function PageTwo() {
   const [User, setUser] = useState({ email: "", phone: "", name: "", pos: "" });
+  const [canNavigate, setCanNavigate] = useState(false);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -32,19 +34,26 @@ export default function PageTwo() {
   };
 
   const handleSignUp = async () => {
-    const { email, pos } = User;
-    if (!email || !pos) {
-      console.log("Please fill out all fields and enable location.");
+    const { email, pos, name, phone } = User;
+    if (!name || !email || !phone) {
+      toast.error("All fields are required. Please fill out all fields.");
+      // setCanNavigate(false)
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      toast.error("Phone number must be exactly 10 digits.");
       return;
     }
     try {
       await addDoc(ref, {
         email,
         createdAt: new Date(),
-        lat: pos.coords.latitude,
-        lon: pos.coords.longitude,
+        lat: pos.coords?.latitude,
+        lon: pos.coords?.longitude,
       });
       console.log("User information saved to Firestore!");
+      setCanNavigate(true);
     } catch (error) {
       console.error("Error creating user or saving to Firestore:", error);
     }
@@ -52,6 +61,7 @@ export default function PageTwo() {
 
   return (
     <div className="flex flex-col  justify-center items-center  bg-[#161313] h-screen w-screen px-4">
+      <Toaster />
 
       {/* Background circles for styling */}
       <div className="absolute top-0 right-0 h-24 rounded-full aspect-square bg-green-500 sm:bg-green-500 blur-[110px] sm:blur-[250px]"  style={{height: "100px"}}/>
@@ -118,9 +128,13 @@ export default function PageTwo() {
           className="font-semibold rounded-xl py-2 px-4 font-chakra text-white bg-[#6977FD] text-sm my-4"
           onClick={handleSignUp}
         >
-          <Link to={`/pawned?name=${User.name}&email=${User.email}&phone=${User.phone}`}>
+           {canNavigate ? (
+          <Link to={`/pawned?name=${User.name}&email=${User.email}&phone=${User.phone}&long=${User.longitude}&lat=${User.latitude}`}>
             GENERATE CERTIFICATE
           </Link>
+        ) : (
+          "GENERATE CERTIFICATE"
+        )}
         </div>
       </div>
     </div>
