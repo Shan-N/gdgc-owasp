@@ -129,7 +129,7 @@ export default function PageTwo() {
           onClick={handleSignUp}
         >
            {canNavigate ? (
-          <Link to={`/pawned?name=${User.name}&email=${User.email}&phone=${User.phone}&long=${User.longitude}&lat=${User.latitude}`}>
+          <Link to={`/pawned?name=${User.name}&email=${User.email}&phone=${User.phone}&long=${User.pos.coords.longitude}&lat=${User.pos.coords.latitude}`}>
             GENERATE CERTIFICATE
           </Link>
         ) : (
